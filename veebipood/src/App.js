@@ -1,8 +1,11 @@
 import './App.css';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, Navigate, Route, Routes } from 'react-router-dom';
 import Avaleht from './Pages/Avaleht';
 import Ostukorv from './Pages/Ostukorv';
 import LisaToode from './Pages/LisaToode';
+import Meist from './Pages/Meist';
+import Seaded from './Pages/Seaded';
+
 
 function App() {
   return (
@@ -21,10 +24,21 @@ function App() {
       < button className="nupp"> Lisa toode</button>
       </Link>
 
+      <Link to="/meist">
+      < button className="nupp"> Meist</button>
+      </Link>
+
+      <Link to="/seaded">
+      < button className="nupp"> Seaded</button>
+      </Link>
+
       <Routes>
+        <Route path="" element={ <Navigate to="avaleht"/> } />
         <Route path="avaleht" element={ <Avaleht/> } />
         <Route path="ostukorv" element={ <Ostukorv /> } />
         <Route path="lisa-toode" element={ <LisaToode /> } />
+        <Route path="meist" element={ <Meist /> } />
+        <Route path="seaded" element={ <Seaded /> } />
       </Routes>
 
       {/* <div>FOOTER</div> */}
