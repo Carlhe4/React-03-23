@@ -24,5 +24,4 @@ function LisaToode() {
     </div>
   )
 }
-
 export default LisaToode

@@ -15,3 +15,18 @@
   cursor: pointer;
   text-decoration: underline;
 }
+
+.kuldne {
+  color: goldenrod
+}
+
+.tume-leht {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+}
+
+.hele-leht{
+  background-color: rgb(250, 250, 250);
+  min-height: 100vh;
+}

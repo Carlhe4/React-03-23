@@ -5,11 +5,19 @@ import Ostukorv from './Pages/Ostukorv';
 import LisaToode from './Pages/LisaToode';
 import Meist from './Pages/Meist';
 import Seaded from './Pages/Seaded';
+import { useState } from 'react';
 
 
 function App() {
+  const[teema, uuendaTeema] = useState("hele-leht");
+
   return (
-    <div className="App">
+    <div className={teema}>
+
+      {teema === "hele-leht" &&<button onClick={() => uuendaTeema("tume-leht")}>Tume leht</button>}
+      {teema === "tume-leht" &&<button onClick={() => uuendaTeema("hele-leht")}>Hele leht</button>}
+
+
       <Link to="/avaleht">
         <img className="pilt" src="https://nobecars.com/wp-content/uploads/2022/01/Untitled-2-5-1024x473.png" alt="" />
       </Link>

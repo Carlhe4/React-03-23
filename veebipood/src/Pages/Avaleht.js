@@ -1,37 +1,48 @@
+import { findAllByTestId } from '@testing-library/react';
 import React, { useState } from 'react'
 
 function Avaleht() {
-  const [kogus, uuendaKogus] = useState(6);
-  const [sonum, uuendaSonum] = useState("Uuenda kogust!");
-  const [laigitud, uuendaLaigitud] = useState(false); //false, true vaikse tahega
+    const[kogus, uuendaKogus] = useState(5);
+    const[laigitud, uuendaLaigitud] = useState(false);
+    const[sonum, uuendaSonum] = useState("Uuenda kogust!");
 
-  function nulli() {
-    uuendaKogus(0);
-    uuendaSonum("Kogus nullitud")
-  }
+    function nulli() {
+      uuendaSonum("Panid tagasi nulli!")
+      uuendaKogus(0)
 
-  function vahenda() {
-    uuendaKogus(kogus - 1);
-    uuendaSonum("Kogus vahendatud")
-  }
+    }
 
-  function suurenda() {  // funktsioonid alati sama 
-    uuendaKogus(kogus + 1);
-    uuendaSonum("Kogus suurendatud")
-  }
+    function vahenda() {
+      uuendaSonum("Vahendasid!")
+      uuendaKogus(kogus - 1)
+
+    }
+
+    function suurenda() {
+      uuendaSonum("Suurendasid")
+      uuendaKogus(kogus + 1)
+
+    }
+
+
+    
   return (
     <div>
-      
-      {/*<div>{laigitud + 0}</div> */}
-      { laigitud === true && <img src="/laigitud.svg" alt="" />}
-      { laigitud === false && <img src="/mittelaigitud.svg" alt="" />}
-      <button onClick={() => uuendaLaigitud(true)}>Muuda like peale</button>
-      <button onClick={() => uuendaLaigitud(false)}>Muuda like maha</button>
-      <div>{sonum}</div>
-      {kogus > 0 && <button onClick={nulli}>Nulli tagasi</button>}
-      <button disabled={kogus === 0} onClick={vahenda}>-</button>
-      {kogus}
-      <button onClick={suurenda}>+</button>
+      {laigitud === true &&<img src="/laigitud.svg" alt=""/>}
+      {laigitud === false &&<img src="/mittelaigitud.svg" alt=""/>}
+
+      <span>{laigitud}</span>
+      <button onClick={() => uuendaLaigitud(true)}>Muuda laigituks</button>
+      <button onClick={() => uuendaLaigitud(false)}>Muuda mittelaigituks</button>
+
+       <br /><br />
+       
+       <div>{sonum}</div>
+       { kogus !== 0 &&<button onClick={nulli}>Tagasi nulli</button>}
+       {/*<button onClick={() => uuendaKogus(0)}>Tagasi nulli</button>*/}
+        <button disabled={kogus ===0} onClick={vahenda} >-</button>
+        <span className={kogus >= 10 ? "kuldne" : undefined}>Kogus on: {kogus} tk</span>
+        <button onClick={suurenda}>+</button>
     </div>
   )
 }
