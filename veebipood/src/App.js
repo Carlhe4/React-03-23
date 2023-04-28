@@ -6,6 +6,8 @@ import LisaToode from './Pages/LisaToode';
 import Meist from './Pages/Meist';
 import Seaded from './Pages/Seaded';
 import { useState } from 'react';
+import Hinnad from './Pages/Hinnad';
+import Poed from './Pages/Poed';
 
 
 function App() {
@@ -40,6 +42,14 @@ function App() {
       < button className="nupp"> Seaded</button>
       </Link>
 
+      <Link to="/hinnad">
+      < button className="nupp">Hinnad</button>
+      </Link>
+
+      <Link to="/poed">
+      < button className="nupp">Poed</button>
+      </Link>
+
       <Routes>
         <Route path="" element={ <Navigate to="avaleht"/> } />
         <Route path="avaleht" element={ <Avaleht/> } />
@@ -47,6 +57,9 @@ function App() {
         <Route path="lisa-toode" element={ <LisaToode /> } />
         <Route path="meist" element={ <Meist /> } />
         <Route path="seaded" element={ <Seaded /> } />
+        <Route path="hinnad" element={ <Hinnad /> } />
+        <Route path="poed" element={ <Poed /> } />
+
       </Routes>
 
       {/* <div>FOOTER</div> */}
