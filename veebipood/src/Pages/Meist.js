@@ -19,6 +19,11 @@ const filtreeriVah10Tahte = () => {
   uuendaTootajad(vastus);
 }
 
+const kustuta = (jrkNr) => {
+  tootajad.splice(jrkNr, 1);
+  uuendaTootajad(tootajad.slice());
+}
+
   return (
     <div>
       <button onClick={sorteeriEesnimi}>Sorteeri eesnime esitahe jargi</button>
@@ -26,7 +31,7 @@ const filtreeriVah10Tahte = () => {
       <button onClick={filtreeriVah10Tahte}>Filtreeri kellel on 10 voi rohkem tahte</button>
       <button onClick={sorteeriTahed}>Sorteeri tahtede arvu jargi</button>
       <div>Tootajad</div>
-      {tootajad.map(e => <div>{e}</div>)}
+      {tootajad.map((e, jrkNr) => <div>{e} <button onClick={() => kustuta(jrkNr)}>x</button></div>)}
       {/*<div>Signe Riisalo</div>
       <div>Riina Sikkut</div>
       <div>Maarjo Mandmaa</div>

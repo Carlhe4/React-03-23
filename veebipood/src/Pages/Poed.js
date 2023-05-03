@@ -72,7 +72,10 @@ function Poed() {
 
     }
 
-        
+    const kustuta = (i) => {
+        poed.splice(i,2);
+        uuendaPoed(poed.slice());
+    }    
 
     
   
@@ -94,7 +97,7 @@ function Poed() {
     <button onClick={filtreeriKellelon9Tahte}>Jata alles need kellel on 9 tahte</button>
     <button onClick={filtreeriKesSisaldabIsLyhendit}>Jata alles need sonad mis sisaldavad Is lyhendit</button>
     <button onClick={filtreeriKellelKolmasTahtI}>Jata alles need kellel on kolmas taht i</button>
-    {poed.map(yksPood => <div>{yksPood}</div>)}
+    {poed.map((yksPood, i) => <div>{yksPood} <button onClick={() => kustuta(i)}>Kustuta</button></div>)}
    </div> 
   )
 }
