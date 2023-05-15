@@ -40,6 +40,7 @@ function Poed() {
         poed.sort((a,b) => a[2].localeCompare(b[2]));
         uuendaPoed(poed.slice());
     }
+    
 
     const filtreeriEgaLoppevad = () => {
         const vastus = poed.filter(yksPood =>yksPood.endsWith("e"))

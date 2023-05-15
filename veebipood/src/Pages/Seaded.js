@@ -1,19 +1,26 @@
 import React, { useState } from 'react'
 
 function Seaded() {
-    const [keel, uuendaKeel] = useState("est");
+    const [keel, uuendaKeel] = useState(localStorage.getItem("keel") || "est");
 
     const muudaKeelEst = () => {
         uuendaKeel("est");
+        localStorage.setItem("keel", "est")
      }
 
     const muudaKeelEng = () => {
         uuendaKeel("eng");
+        localStorage.setItem("keel", "eng")
     }
 
     const muudaKeelRus = () => {
         uuendaKeel("rus");
+        localStorage.setItem("keel", "rus")
     }
+
+   
+
+
   return (
     <div>
         <button onClick={muudaKeelEst}>Eesti keelseks</button>

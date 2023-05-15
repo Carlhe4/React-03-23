@@ -1,1 +1,5 @@
-["Nobe", "Tesla", "BMW"]
+[
+{"nimi": "Nobe", "hind": 30000, "aktiivne": true, "pilt": "https://nobecars.com/wp-content/uploads/2022/01/Untitled-2-5-1024x473.png"}, 
+{"nimi": "Tesla", "hind": 60000, "aktiivne": false, "pilt": "https://www.topgear.com/sites/default/files/cars-car/image/2018/09/ab3t4352.jpg"}, 
+{"nimi": "BMW", "hind": 40000, "aktiivne": true, "pilt": "https://upload.wikimedia.org/wikipedia/commons/0/0a/BMW_M5_IMG_0887.jpg"}
+]

@@ -12,18 +12,31 @@ import Tooted from './Pages/Tooted';
 import HaldaTooted from './Pages/HaldaTooted';
 import YksikToode from './Pages/YksikToode';
 import MuudaToode from './Pages/MuudaToode';
+import Tagasiside from './Pages/Tagasiside';
 
 
 
 
 function App() {
-  const[teema, uuendaTeema] = useState("hele-leht");
+  const[teema, uuendaTeema] = useState(localStorage.getItem("theme") || "hele-leht");
+
+  const muudaTeemaTume = () => {
+    uuendaTeema("tume-leht");
+    localStorage.setItem("theme", "tume-leht");
+  }
+
+  const muudaTeemaHele = () => {
+    uuendaTeema("hele-leht")
+    localStorage.setItem("theme", "hele-leht");
+  }
+
+
 
   return (
     <div className={teema}>
 
-      {teema === "hele-leht" &&<button onClick={() => uuendaTeema("tume-leht")}>Tume leht</button>}
-      {teema === "tume-leht" &&<button onClick={() => uuendaTeema("hele-leht")}>Hele leht</button>}
+      {teema === "hele-leht" &&<button onClick={muudaTeemaTume}>Tume leht</button>}
+      {teema === "tume-leht" &&<button onClick={muudaTeemaHele}>Hele leht</button>}
 
 
       <Link to="/avaleht">
@@ -78,7 +91,7 @@ function App() {
         <Route path="halda" element={ <HaldaTooted /> } />
         <Route path="toode/:index" element={ <YksikToode /> } />
         <Route path="muuda/:index" element={ <MuudaToode /> } />
-
+        <Route path="tagasiside/:index" element={ <Tagasiside /> } />
       </Routes>
 
       {/* <div>FOOTER</div> */}
